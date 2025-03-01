@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: "Dancing Script", cursive;
+      }
+
+      .letter {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transform-origin: top left;
+        animation: openLetter 1.5s ease-in-out forwards;
+      }
+
+      .letter::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        z-index: -1;
+      }
+
+      .letter-content {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out 1.5s forwards;
+      }
+
+      .letter-content h2 {
+        font-size: 2rem;
+        color: #ff6f61;
+        margin-bottom: 1rem;
+      }
+
+      .letter-content p {
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      @keyframes openLetter {
+        0% {
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+          transform: rotateX(90deg) rotateY(10deg);
+        }
+        100% {
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="letter">
+      <div class="letter-content">
+        <h2>Dear You,</h2>
+        <p>
+          On this special day, I want to thank you for being such an amazing
+          person. You inspire me every day with your strength, kindness, and
+          beauty. Happy Women's Day!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
